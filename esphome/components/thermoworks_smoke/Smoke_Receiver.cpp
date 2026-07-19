@@ -121,7 +121,7 @@ void SmokeReceiverComponent::update() {
         if (probe2_temp != nullptr) probe2_temp->publish_state(NAN);
         if (probe2_min != nullptr) probe2_min->publish_state(NAN);
         if (probe2_max != nullptr) probe2_max->publish_state(NAN);
-        ESP_LOGW(TAG, "No packets received for %d seconds, marking sensors unavailable", TIMEOUT_MS / 1000);
+        ESP_LOGW(TAG, "No packets received for %ld seconds, marking sensors unavailable", TIMEOUT_MS / 1000);
         // Continue to check for packets - don't return early
     }
 
