@@ -97,7 +97,7 @@ async def to_code(config):
         cg.add(var.set_probe2_max_sensor(sens))
         
     
-    cg.add_library("nrf24/RF24", None)
+    cg.add_library("sosuke3/RF24", None)
     cg.add_library("SPI", None)
 
 # https://github.com/thegroove/esphome-custom-component-examples/blob/master/custom_components/empty_compound_sensor/sensor.py
