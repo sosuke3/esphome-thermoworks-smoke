@@ -1,8 +1,12 @@
+import logging
 import esphome.config_validation as cv
 import esphome.codegen as cg
 from esphome import pins
 from esphome.components import spi, sensor
 from esphome.const import CONF_ID
+
+_LOGGER = logging.getLogger(__name__)
+_LOGGER.debug("Starting thermoworks_smoke component initialization")
 
 DEPENDENCIES = ["spi"]
 AUTO_LOAD = ["sensor"]
