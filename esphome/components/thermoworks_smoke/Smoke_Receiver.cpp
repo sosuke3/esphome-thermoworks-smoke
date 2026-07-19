@@ -55,7 +55,12 @@ namespace thermoworks_smoke {
 
 static const char* const TAG = "thermoworks_smoke";
 
+SmokeReceiverComponent::SmokeReceiverComponent() {
+  ESP_LOGD(TAG, "SmokeReceiverComponent constructor called");
+}
+
 void SmokeReceiverComponent::setup() {
+    ESP_LOGD(TAG, "setup() called");
     ESP_LOGCONFIG(TAG, "Setting up RF24...");
 
     // Start nRF24 interface
@@ -111,6 +116,8 @@ void SmokeReceiverComponent::setup() {
 }
 
 void SmokeReceiverComponent::update() {
+    ESP_LOGD(TAG, "Checking for packets...");
+
     // Check for packet timeout - mark sensors unavailable if no data received
     const uint32_t TIMEOUT_MS = 60000;  // 60 seconds
     if (millis() - last_packet_time_ > TIMEOUT_MS) {
