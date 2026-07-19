@@ -110,7 +110,6 @@ void SmokeReceiverComponent::setup() {
     last_packet_time_ = millis();
 
     ESP_LOGCONFIG(TAG,"Setup executed, started listening...");
-  }
   } catch (const std::exception& e) {
     ESP_LOGE(TAG, "Setup failed with exception: %s", e.what());
     mark_failed();
