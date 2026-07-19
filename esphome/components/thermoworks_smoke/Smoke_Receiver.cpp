@@ -56,7 +56,6 @@ namespace thermoworks_smoke {
 static const char* const TAG = "thermoworks_smoke";
 
 void SmokeReceiverComponent::setup() {
-  try {
     ESP_LOGD(TAG, "setup() called");
     ESP_LOGCONFIG(TAG, "Setting up RF24...");
 
@@ -109,14 +108,7 @@ void SmokeReceiverComponent::setup() {
     // Initialize packet timeout tracker
     last_packet_time_ = millis();
 
-    ESP_LOGCONFIG(TAG,"Setup executed, started listening...");
-  } catch (const std::exception& e) {
-    ESP_LOGE(TAG, "Setup failed with exception: %s", e.what());
-    mark_failed();
-  } catch (...) {
-    ESP_LOGE(TAG, "Setup failed with unknown exception");
-    mark_failed();
-  }    
+    ESP_LOGCONFIG(TAG,"Setup executed, started listening..."); 
 }
 
 void SmokeReceiverComponent::update() {
